@@ -9,6 +9,19 @@ Runs fully locally using LocalStack.
 - Python 3.8+
 - AWS CLI
 
+
+## Upload Validation & Security
+
+The upload API enforces strict validation before persisting data:
+
+- Only image MIME types are accepted
+- Maximum file size: **5 MB**
+- File signature (magic number) validation ensures content integrity
+- Invalid uploads are rejected with HTTP 400
+
+This prevents malformed or malicious files from being stored.
+
+
 ## Environment variables
 ```
 export AWS_ACCESS_KEY_ID=test
@@ -57,6 +70,8 @@ docker-compose up
 
 ![LocalStack Running](images/docker_ready.png)
 
+![LocalStack Running Multiple calls](images/running_docker.png)
+
 ## Run pytest
 
 ``` 
@@ -64,3 +79,9 @@ pytest tests/test_smoke.py -v
 ```
 
 ![pytest success](images/pytest.png)
+
+```
+pytest tests/test_upload_validation.py -v
+```
+
+![pytest upload test success](images/test_upload_validation.png)
