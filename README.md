@@ -35,6 +35,16 @@ export AWS_ENDPOINT=http://localhost:4566
 
 Before running the application or tests, ensure the required AWS resources are available in LocalStack.
 
+Run this script to setup aws 
+
+```
+./localstack_init.sh
+```
+
+
+To run manually 
+
+
 Create and verify the S3 bucket
 ```
 aws --endpoint-url=http://localhost:4566 s3 mb s3://image-bucket
