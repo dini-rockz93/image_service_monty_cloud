@@ -94,4 +94,4 @@ pytest tests/test_smoke.py -v
 pytest tests/test_upload_validation.py -v
 ```
 
-![pytest upload test success](images/test_upload_validation.png)
+![pytest upload test success](images/upload_tests.png)
