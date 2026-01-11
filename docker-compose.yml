@@ -1,0 +1,13 @@
+
+version: "3.8"
+services:
+  localstack:
+    image: localstack/localstack:latest
+    privileged: true
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=s3,dynamodb
+      - DEFAULT_REGION=us-east-1
+    volumes:
+      - ./localstack_init.sh:/etc/localstack/init/ready.d/01-init.sh

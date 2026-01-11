@@ -1,0 +1,16 @@
+
+openapi: 3.0.3
+info:
+  title: Cloud Image Service
+  version: 1.0.0
+paths:
+  /images:
+    post:
+      summary: Upload image
+    get:
+      summary: List images
+  /images/{image_id}:
+    get:
+      summary: Download image
+    delete:
+      summary: Delete image
